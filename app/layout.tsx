@@ -1,12 +1,17 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import { Inter, Oxygen } from 'next/font/google'
+import { GLOBAL, ASSET } from 'config'
+import 'theme/css/globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const oxygen = Oxygen({ subsets: ['latin'], variable: '--font-oxygen', weight: ['400', '700'] })
 
 export const metadata: Metadata = {
-  title: 'Hite nz',
-  description: 'Global Transactions',
+  title: GLOBAL.APP_TITLE,
+  description: GLOBAL.APP_DESCRIPTION,
+  icons: {
+    icon: ASSET.ICON,
+  },
 }
 
 export default function RootLayout({
@@ -16,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.variable} ${oxygen.variable}`}>{children}</body>
     </html>
   )
 }
