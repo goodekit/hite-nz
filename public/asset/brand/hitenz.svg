@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient18">
+      <stop
+         style="stop-color:#1b6977;stop-opacity:1;"
+         offset="0.04354588"
+         id="stop19" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop20" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient18"
+       id="linearGradient39"
+       gradientUnits="userSpaceOnUse"
+       x1="59.636719"
+       y1="257.20117"
+       x2="240"
+       y2="-150"
+       gradientTransform="matrix(1.0546481,0,0,0.97086923,-19.673298,12.865315)" />
+  </defs>
+  <path
+     id="rect20"
+     mask="none"
+     style="display:inline;fill:#aaa8a8;stroke-width:11.69;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+     d="m 47.935196,97.621775 c -1.580307,0 -2.853516,0.638777 -2.853516,1.431641 V 426.19013 c 0,0.79287 1.273209,1.43165 2.853516,1.43165 H 462.22816 c 1.58031,0 2.85352,-0.63878 2.85352,-1.43165 V 99.053416 c 0,-0.792864 -1.27321,-1.431641 -2.85352,-1.431641 z" />
+  <path
+     id="rect4"
+     style="fill:url(#linearGradient39);fill-opacity:1;stroke-width:11.829;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+     d="M 420.08168,182.62177 C 416.63515,199.40342 371.94985,164.84871 360,177.91308 c -3.20512,3.50407 -6.82334,6.66944 -10.54647,9.70869 h -84.37185 c 13.16019,4.99491 38.12979,84.05179 52.34927,84.66094 14.21948,0.60913 28.53948,0.49979 42.56905,2.71729 29.87697,4.72228 57.49658,20.32241 75.89347,42.50207 18.3969,22.17967 -21.01753,46.16605 -23.16106,74.00223 -0.83069,10.78766 52.34927,34.72753 52.34927,34.72753 l -3.00946,1.38995 c 0,0 3.00946,-0.62018 3.00946,-1.38995 V 98.91618 c 0,-0.76977 -1.34279,-1.38994 -3.00946,-1.38994 z M 186.35816,427.62178 c -10.66407,-24.38733 -14.11549,-51.77083 -9.889,-78.00725 4.43853,-27.55264 17.18318,-53.70621 35.96803,-74.57036 H 104.14468 c -5.6077,-23.62108 111.66222,-112.98201 122.95007,-134.53832 8.58101,-16.38708 20.79206,-30.6786 34.87781,-42.88408 H 47.527622 c -1.555776,0 -2.809222,0.62 -2.809222,1.38954 v 327.22093 c 0,0.76954 1.253446,1.38954 2.809222,1.38954 z" />
+</svg>
