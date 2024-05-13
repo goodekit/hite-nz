@@ -1,10 +1,12 @@
+import { DoughnutChart } from 'component'
 import { AnimateCounter } from 'component/animate'
-import { formatCurrency } from 'lib/utils'
 
 const BalanceBox = ({ account = [], bank, totalCurrentBalance }: BalanceBoxProps) => {
   return (
     <section className='total-balance'>
-      <div className='total-balance-chart'>{/* {chart} */}</div>
+      <div className='total-balance-chart'>
+        <DoughnutChart account={account} />
+      </div>
       <div className='flex flex-col gap-6'>
         <h2 className='header-2'> Bank Accounts: {bank}</h2>
         <div className='flex flex-col gap-2'>
