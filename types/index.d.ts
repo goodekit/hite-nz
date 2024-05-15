@@ -31,9 +31,9 @@ declare type User = {
   userId: string
   dwollaCustomerUrl: string
   dwollaCustomerId: string
-  firstName: string
-  lastName: string
-  address1: string
+  firstname: string
+  lastname: string
+  address: string
   city: string
   state: string
   postalCode: string
@@ -209,8 +209,9 @@ declare interface FooterProps {
 
 declare interface RightSidebarProps {
   user: User
-  transactions: Transaction[]
-  banks: Bank[] & Account[]
+  transaction: Transaction[]
+  bank: Bank[]
+  // bank: Bank[] & Account[]
 }
 
 declare interface SiderbarProps {
