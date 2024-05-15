@@ -11,9 +11,9 @@ const Sidebar = ({ user }: SiderbarProps) => {
   return (
     <section className='sidebar'>
       <nav className='flex flex-col gap-4'>
-        <Link href='/' className='mb-12 cursor-pointer items-center gap-2'>
+        <Link href='/' className='mb-12 flex cursor-pointer items-center gap-2'>
           <Image src='/asset/brand/hitenz.svg' alt='logo' width={100} height={100} className='size-[50px] max-xl:size-50' />
-          <h1 className='sidebar-logo'>hite nz</h1>
+          <h1 className='sidebar-logo'>hite</h1>
         </Link>
         {navLink?.map((link) => {
           const isActive = pathname === link.route || pathname.startsWith(`${link.route}/`)
@@ -39,12 +39,15 @@ const Sidebar = ({ user }: SiderbarProps) => {
                 className={cn('sidebar-label', {
                   '!text-white': isActive,
                 })}
-              ></p>
-              {link.label}
+              >
+                {link.label}
+              </p>
             </Link>
           )
         })}
+        USER
       </nav>
+      FOOTER
     </section>
   )
 }
