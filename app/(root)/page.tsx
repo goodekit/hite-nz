@@ -1,4 +1,5 @@
 import { BalanceBox, HeaderBox, RightSidebar } from 'component'
+import { off } from 'process'
 
 const Home = () => {
   const user = {
@@ -19,12 +20,31 @@ const Home = () => {
 
   const _account = [
     {
-      $id: '1',
-      accountId: '**** **** **** 1234',
-      bankId: 'boa',
-      accessToken: 'asdadad2d1',
-      fundingSourceUrl: 'USD',
-      userId: 'asdad21',
+      id: '1',
+      availableBalance: 1232,
+      currentBalance: 1232.21,
+      accountName: 'Joe Doe',
+      mask: '1234',
+      officialName: 'Joe Doe',
+      institutionId: 'boa',
+      name: 'Joe Doe',
+      type: 'checking',
+      subtype: 'personal',
+      appwriteItemId: 'asdad21',
+      sharableId: 'asda-1d1-123123',
+    },
+    {
+      id: '2',
+      availableBalance: 1232,
+      currentBalance: 1232.21,
+      accountName: 'Joe Doe',
+      mask: '1234',
+      officialName: 'Joe Doe',
+      institutionId: 'boa',
+      name: 'Joe Doe',
+      type: 'checking',
+      subtype: 'personal',
+      appwriteItemId: 'asdad21',
       sharableId: 'asda-1d1-123123',
     },
   ]
