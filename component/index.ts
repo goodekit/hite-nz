@@ -13,3 +13,5 @@ export { default as Sidebar } from './sidebar/sidebar'
 export { default as RightSidebar } from './sidebar/right'
 // :nav
 export { default as MobileNav } from './nav/mobile'
+// :bank-card
+export { default as BankCard } from './bank-card/bank-card'
