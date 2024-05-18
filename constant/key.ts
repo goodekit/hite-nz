@@ -1,4 +1,6 @@
 export const KEY = {
+  DESKTOP: 'desktop',
+  MOBILE: 'mobile',
   EMAIL: 'email',
   PASSWORD: 'password',
   SUBMIT: 'submit',
