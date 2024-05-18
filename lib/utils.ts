@@ -205,6 +205,7 @@ export const schema = (type: string) =>
     firstname: type === KEY.SIGN_IN ? z.string().optional() : z.string().min(3),
     lastname: type === KEY.SIGN_IN ? z.string().optional() : z.string().min(3),
     address: type === KEY.SIGN_IN ? z.string().optional() : z.string().max(50),
+    city: type === KEY.SIGN_IN ? z.string().optional() : z.string().max(50),
     state: type === KEY.SIGN_IN ? z.string().optional() : z.string().min(2).max(2),
     postalCode: type === KEY.SIGN_IN ? z.string().optional() : z.string().min(3).max(6),
     dateOfBirth: type === KEY.SIGN_IN ? z.string().optional() : z.string().min(3),
