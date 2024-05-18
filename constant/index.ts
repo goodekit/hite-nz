@@ -1,2 +1,5 @@
 export * from './transaction'
 export * from './currency'
+export * from './label'
+export * from './placeholder'
+export * from './key'
