@@ -5,4 +5,5 @@ export const ASSET = {
   PAY_PASS: '/asset/svg/paypass.svg',
   MASTERCARD: '/asset/svg/mastercard.svg',
   LINES: '/asset/image/lines.png',
+  SIGN_OUT: '/asset/svg/signout.svg',
 }
