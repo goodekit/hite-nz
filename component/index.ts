@@ -15,3 +15,6 @@ export { default as RightSidebar } from './sidebar/right'
 export { default as MobileNav } from './nav/mobile'
 // :bank-card
 export { default as BankCard } from './bank-card/bank-card'
+// :form
+export { default as AuthForm } from './form/auth'
+export * from './form'
