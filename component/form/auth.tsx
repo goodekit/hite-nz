@@ -13,6 +13,7 @@ import { Form } from 'component/form/form'
 import { ASSET } from 'config'
 import { KEY, PLACEHOLDER, LABEL } from 'constant'
 import { Loader2 } from 'lucide-react'
+import { signIn, signUp } from 'lib/actions/user.actions'
 
 const { EMAIL, PASSWORD, SUBMIT, SIGN_IN, SIGN_UP, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH, SSN } = LABEL.FORM
 const { ADDRESS } = LABEL
@@ -31,8 +32,6 @@ const AuthForm = ({ type }: { type: string }) => {
     defaultValues: {
       email: '',
       password: '',
-      firstname: '',
-      lastname: '',
     },
   })
 
@@ -40,16 +39,27 @@ const AuthForm = ({ type }: { type: string }) => {
     setIsLoading(true)
     try {
       if (type === KEY.SIGN_UP) {
-        // const newUser = new SignUp(data)
-        // setUser(newUser)
+        const userData = {
+          firstName: data.firstname!,
+          lastName: data.lastname!,
+          address1: data.address!,
+          city: data.city!,
+          state: data.state!,
+          postalCode: data.postalCode!,
+          dateOfBirth: data.dateOfBirth!,
+          ssn: data.ssn!,
+          email: data.email,
+          password: data.password,
+        }
+
+        const newUser = await signUp(userData)
+        setUser(newUser)
       } else if (type === KEY.SIGN_IN) {
-        // const response = await SignIn({
-        //   email: data.email,
-        //   password: data.password,
-        // })
-        // if (response) {
-        //   router.push('/')
-        // }
+        const response = await signIn({
+          email: data.email,
+          password: data.password,
+        })
+        if (response) router.push('/')
       }
     } catch (error) {
       console.error(error)
@@ -80,10 +90,11 @@ const AuthForm = ({ type }: { type: string }) => {
               {type === KEY.SIGN_UP && (
                 <Fragment>
                   <div className='flex gap-4 justify-center'>
-                    <FormInput control={form.control} label={LAST_NAME} name={KEY.LAST_NAME} placeholder={FORM.LAST_NAME} />
                     <FormInput control={form.control} label={FIRST_NAME} name={KEY.FIRST_NAME} placeholder={FORM.FIRST_NAME} />
+                    <FormInput control={form.control} label={LAST_NAME} name={KEY.LAST_NAME} placeholder={FORM.LAST_NAME} />
                   </div>
                   <FormInput control={form.control} label={ADDRESS.ADDRESS} name={KEY.ADDRESS} placeholder={PLACEHOLDER.ADDRESS.ADDRESS} />
+                  <FormInput control={form.control} label={ADDRESS.CITY} name={KEY.CITY} placeholder={PLACEHOLDER.ADDRESS.CITY} />
                   <div className='flex gap-4 justify-center'>
                     <FormInput control={form.control} label={ADDRESS.STATE} name={KEY.STATE} placeholder={PLACEHOLDER.ADDRESS.STATE} />
                     <FormInput control={form.control} label={ADDRESS.POSTAL_CODE} name={KEY.POSTAL_CODE} placeholder={PL_ADDRESS.POSTAL_CODE} />
