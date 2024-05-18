@@ -18,3 +18,5 @@ export { default as BankCard } from './bank-card/bank-card'
 // :form
 export { default as AuthForm } from './form/auth'
 export * from './form'
+// :footer
+export { default as Footer } from './footer/footer'
