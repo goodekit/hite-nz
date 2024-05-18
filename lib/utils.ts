@@ -1,5 +1,6 @@
 /* eslint-disable no-prototype-builtins */
 import { type ClassValue, clsx } from 'clsx'
+import { KEY } from 'constant'
 import qs from 'query-string'
 import { twMerge } from 'tailwind-merge'
 import { z } from 'zod'
@@ -193,4 +194,19 @@ export const authFormSchema = (type: string) =>
     // both
     email: z.string().email(),
     password: z.string().min(8),
+  })
+
+export const schema = (type: string) =>
+  z.object({
+    // :sign-in
+    email: z.string().email({ message: 'Invalid email address' }),
+    password: z.string().min(8),
+    // :sign-up
+    firstname: type === KEY.SIGN_IN ? z.string().optional() : z.string().min(3),
+    lastname: type === KEY.SIGN_IN ? z.string().optional() : z.string().min(3),
+    address: type === KEY.SIGN_IN ? z.string().optional() : z.string().max(50),
+    state: type === KEY.SIGN_IN ? z.string().optional() : z.string().min(2).max(2),
+    postalCode: type === KEY.SIGN_IN ? z.string().optional() : z.string().min(3).max(6),
+    dateOfBirth: type === KEY.SIGN_IN ? z.string().optional() : z.string().min(3),
+    ssn: type === KEY.SIGN_IN ? z.string().optional() : z.string().min(3),
   })
