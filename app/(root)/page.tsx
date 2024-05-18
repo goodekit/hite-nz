@@ -1,7 +1,9 @@
 import { BalanceBox, HeaderBox, RightSidebar } from 'component'
+import { getLoggedInUser } from 'lib/actions/user.actions'
 import { off } from 'process'
 
-const Home = () => {
+const Home = async () => {
+  const loggedInUser = await getLoggedInUser()
   const user = {
     $id: '1',
     firstname: 'Joe',
@@ -53,11 +55,11 @@ const Home = () => {
     <section className='home'>
       <div className='home-content'>
         <header className='home-header'>
-          <HeaderBox type='greeting' title='Welcome' user={user.firstname || 'Guest'} subtext='this is a description' />
+          <HeaderBox type='greeting' title='Welcome' user={loggedInUser?.name || 'Guest'} subtext='this is a description' />
           <BalanceBox account={[]} bank={1} totalCurrentBalance={2356} />
         </header>
       </div>
-      <RightSidebar user={user} bank={_account} transaction={[]} />
+      <RightSidebar user={loggedInUser} bank={_account} transaction={[]} />
     </section>
   )
 }
