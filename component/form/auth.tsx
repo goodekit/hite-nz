@@ -8,7 +8,7 @@ import { z } from 'zod'
 import { schema } from 'lib/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { Button, FormInput } from 'component'
+import { Button, FormInput, PlaidLink } from 'component'
 import { Form } from 'component/form/form'
 import { ASSET } from 'config'
 import { KEY, PLACEHOLDER, LABEL } from 'constant'
@@ -40,9 +40,9 @@ const AuthForm = ({ type }: { type: string }) => {
     try {
       if (type === KEY.SIGN_UP) {
         const userData = {
-          firstName: data.firstname!,
-          lastName: data.lastname!,
-          address1: data.address!,
+          firstname: data.firstname!,
+          lastname: data.lastname!,
+          address: data.address!,
           city: data.city!,
           state: data.state!,
           postalCode: data.postalCode!,
@@ -82,7 +82,9 @@ const AuthForm = ({ type }: { type: string }) => {
         </div>
       </header>
       {user ? (
-        <div className='flex flex-col gap-4'></div>
+        <div className='flex flex-col gap-4'>
+          <PlaidLink user={user} variant='primary' />
+        </div>
       ) : (
         <Fragment>
           <Form {...form}>
