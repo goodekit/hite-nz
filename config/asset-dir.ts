@@ -6,4 +6,5 @@ export const ASSET = {
   MASTERCARD: '/asset/svg/mastercard.svg',
   LINES: '/asset/image/lines.png',
   SIGN_OUT: '/asset/svg/signout.svg',
+  AUTH_IMAGE: '/asset/image/bank.jpg',
 }
