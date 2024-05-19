@@ -20,3 +20,5 @@ export { default as AuthForm } from './form/auth'
 export * from './form'
 // :footer
 export { default as Footer } from './footer/footer'
+// :plaid
+export { default as PlaidLink } from './plaid/plaid-link'
