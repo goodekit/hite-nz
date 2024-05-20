@@ -48,8 +48,8 @@ export const signIn = async ({ email, password }: signInProps) => {
 }
 
 export const signUp = async ({ password, ...userData }: SignUpParams) => {
-  const { email, firstname, lastname } = userData
-  const name = `${firstname} ${lastname}`
+  const { email, firstName, lastName } = userData
+  const name = `${firstName} ${lastName}`
 
   let newUserAccount
 
@@ -57,12 +57,11 @@ export const signUp = async ({ password, ...userData }: SignUpParams) => {
     const { account, database } = await createAdminClient()
     newUserAccount = await account.create(ID.unique(), email, password, name)
 
-    console.log('newUserAccount: ', newUserAccount)
     if (!newUserAccount) throw new Error('User account not created')
 
     const dwollaCustomerUrl = await createDwollaCustomer({
-      ...userData,
       type: 'personal',
+      ...userData,
     })
 
     if (!dwollaCustomerUrl) throw new Error('Dwolla customer not created')
@@ -116,13 +115,13 @@ export async function signOut() {
 
 export const createLinkToken = async (user: User) => {
   try {
-    const name = `${user.firstname} ${user.lastname}`
+    const name = `${user.firstName} ${user.lastName}`
 
     const tokenParams = {
       user: {
         client_user_id: user.$id,
       },
-      client_name: `${user.firstname} ${user.lastname}`,
+      client_name: `${user.firstName} ${user.lastName}`,
       products: ['auth'] as Products[],
       language: 'en',
       country_codes: ['US'] as CountryCode[],
