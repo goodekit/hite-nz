@@ -8,9 +8,9 @@ declare type SearchParamProps = {
 // ========================================
 
 declare type SignUpParams = {
-  firstname: string
-  lastname: string
-  address: string
+  firstName: string
+  lastName: string
+  address1: string
   city: string
   state: string
   postalCode: string
@@ -31,10 +31,10 @@ declare type User = {
   userId: string
   dwollaCustomerUrl: string
   dwollaCustomerId: string
-  firstname: string
-  lastname: string
+  firstName: string
+  lastName: string
   name: string
-  address: string
+  address1: string
   city: string
   state: string
   postalCode: string
@@ -120,11 +120,11 @@ declare type AddFundingSourceParams = {
 }
 
 declare type NewDwollaCustomerParams = {
-  firstname: string
-  lastname: string
+  firstName: string
+  lastName: string
   email: string
   type: string
-  address: string
+  address1: string
   city: string
   state: string
   postalCode: string
