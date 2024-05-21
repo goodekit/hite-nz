@@ -5,7 +5,7 @@ import { CURRENCY } from 'constant'
 const AnimateCounter = ({ amount }: { amount: number }) => {
   const setting = {
     decimals: 2,
-    decimal: ',',
+    decimal: '.',
     prefix: CURRENCY.NZD,
     end: amount,
   }
