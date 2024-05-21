@@ -4,16 +4,20 @@ import Image from 'next/image'
 import { BankCard } from 'component/bank-card'
 
 const RightSidebar = ({ user, bank, transaction }: RightSidebarProps) => {
+  const name = user.firstName + ' ' + user.lastName
+
   return (
     <aside className='right-sidebar'>
       <section className='flex flex-col pb-8'>
         <div className='profile-banner' />
         <div className='profile'>
           <div className='profile-img'>
-            <span className='text-5xl font-bold text-cyan-500'>{user.name[0]}</span>
+            <span className='text-5xl font-bold text-cyan-500'>{user.firstName[0]}</span>
           </div>
           <div className='profile-details'>
-            <h1 className='profile-name'>{user.name}</h1>
+            <h1 className='profile-name'>
+              {user.firstName} {user.lastName}
+            </h1>
             <p className='profile-email'>{user.email}</p>
           </div>
         </div>
@@ -31,12 +35,12 @@ const RightSidebar = ({ user, bank, transaction }: RightSidebarProps) => {
         {bank?.length > 0 && (
           <div className='relative flex flex-1 flex-col items-center justify-center gap-5'>
             <div className='absolute right-0 top-8 z-0 w-[90%]'>
-              <BankCard key={2} account={bank[1]} username={`${user.name}`} />
+              <BankCard key={2} account={bank[1]} username={name} />
             </div>
 
             {bank[1] && (
               <div className='absolute right-0 top-8 z-0 w-[90%]'>
-                <BankCard key={0} account={bank[0]} username={`${user.name}`} />
+                <BankCard key={0} account={bank[0]} username={name} />
               </div>
             )}
           </div>
