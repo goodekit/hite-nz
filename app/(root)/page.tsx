@@ -1,65 +1,28 @@
 import { BalanceBox, HeaderBox, RightSidebar } from 'component'
 import { getLoggedInUser } from 'lib/actions/user.actions'
-import { off } from 'process'
+import { getAccounts, getAccount } from 'lib/actions/bank.actions'
 
-const Home = async () => {
+const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
   const loggedInUser = await getLoggedInUser()
-  const user = {
-    $id: '1',
-    firstname: 'Joe',
-    lastname: 'Doe',
-    email: 'john.doe@example.com',
-    userId: 'asdad21',
-    dwollaCustomerUrl: 'asdadad2d1',
-    dwollaCustomerId: 'asdad21',
-    address: '123 Main St',
-    city: 'New York',
-    state: 'NY',
-    postalCode: '10001',
-    dateOfBirth: '01/01/1990',
-    ssn: '123-45-6789',
-  }
 
-  const _account = [
-    {
-      id: '1',
-      availableBalance: 1232,
-      currentBalance: 1232.21,
-      accountName: 'Joe Doe',
-      mask: '1234',
-      officialName: 'Joe Doe',
-      institutionId: 'boa',
-      name: 'Joe Doe',
-      type: 'checking',
-      subtype: 'personal',
-      appwriteItemId: 'asdad21',
-      sharableId: 'asda-1d1-123123',
-    },
-    {
-      id: '2',
-      availableBalance: 1232,
-      currentBalance: 1232.21,
-      accountName: 'Joe Doe',
-      mask: '1234',
-      officialName: 'Joe Doe',
-      institutionId: 'boa',
-      name: 'Joe Doe',
-      type: 'checking',
-      subtype: 'personal',
-      appwriteItemId: 'asdad21',
-      sharableId: 'asda-1d1-123123',
-    },
-  ]
+  const accounts = await getAccounts({ userId: loggedInUser?.$id })
+
+  if (!accounts) return
+
+  const accountsData = accounts?.data
+  const appwriteItemId = (id as string) || accountsData[0]?.appwriteItemId
+
+  const account = await getAccount({ appwriteItemId })
 
   return (
     <section className='home'>
       <div className='home-content'>
         <header className='home-header'>
-          <HeaderBox type='greeting' title='Welcome' user={loggedInUser?.name || 'Guest'} subtext='this is a description' />
-          <BalanceBox account={[]} bank={1} totalCurrentBalance={2356} />
+          <HeaderBox type='greeting' title='Welcome' user={loggedInUser?.firstName || 'Guest'} subtext='this is a description' />
+          <BalanceBox account={accountsData} bank={accounts?.totalBanks} totalCurrentBalance={accounts?.totalCurrentBalance} />
         </header>
       </div>
-      <RightSidebar user={loggedInUser} bank={_account} transaction={[]} />
+      <RightSidebar user={loggedInUser} bank={accountsData?.slice(0, 2)} transaction={account?.transactions} />
     </section>
   )
 }
