@@ -7,4 +7,5 @@ export const ASSET = {
   LINES: '/asset/image/lines.png',
   SIGN_OUT: '/asset/svg/signout.svg',
   AUTH_IMAGE: '/asset/image/bank.jpg',
+  CONNECT_BANK: '/asset/svg/connect-bank.svg',
 }
