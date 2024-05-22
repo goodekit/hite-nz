@@ -1,4 +1,6 @@
 export const KEY = {
+  DEBIT: 'debit',
+  CREDIT: 'credit',
   DESKTOP: 'desktop',
   MOBILE: 'mobile',
   EMAIL: 'email',
