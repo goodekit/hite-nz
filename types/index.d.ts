@@ -220,9 +220,9 @@ declare interface SiderbarProps {
   user: User
 }
 
-declare interface RecentTransactionsProps {
-  accounts: Account[]
-  transactions: Transaction[]
+declare interface RecentTransactionProps {
+  account: Account[]
+  transaction: Transaction[]
   appwriteItemId: string
   page: number
 }
@@ -237,7 +237,7 @@ declare interface CategoryBadgeProps {
 }
 
 declare interface TransactionTableProps {
-  transactions: Transaction[]
+  transaction: Transaction[]
 }
 
 declare interface CategoryProps {
