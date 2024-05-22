@@ -22,3 +22,5 @@ export * from './form'
 export { default as Footer } from './footer/footer'
 // :plaid
 export { default as PlaidLink } from './plaid/plaid-link'
+// :transaction
+export { default as RecentTransaction } from './transaction/recent'
