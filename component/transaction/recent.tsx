@@ -5,7 +5,7 @@ import { TabItem } from './tab-item'
 import { Info } from './info'
 import TableTransaction from './table'
 
-const RecentTransaction = ({ account, transaction = [], appwriteItemId, page = 1 }: RecentTransactionProps) => {
+const RecentTransaction = ({ account, transactions = [], appwriteItemId, page = 1 }: RecentTransactionProps) => {
   return (
     <section className='recent-transactions'>
       <header className='flex items-center justify-between'>
@@ -23,11 +23,10 @@ const RecentTransaction = ({ account, transaction = [], appwriteItemId, page = 1
             </TabsTrigger>
           ))}
         </TabsList>
-
         {account.map((a: Account) => (
           <TabsContent value={a.appwriteItemId} key={a.id} className='space-y-4'>
             <Info account={a} appwriteItemId={appwriteItemId} type='full' />
-            <TableTransaction transaction={transaction} />
+            <TableTransaction transactions={transactions} />
           </TabsContent>
         ))}
       </Tabs>
