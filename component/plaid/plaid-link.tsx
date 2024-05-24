@@ -2,10 +2,11 @@
 
 import { Fragment, useCallback, useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import { PlaidLinkOnSuccess, PlaidLinkOptions, usePlaidLink } from 'react-plaid-link'
 import { createLinkToken, exchangePublicToken } from 'lib/actions/user.actions'
 import { Button } from 'component'
-import { StyledString } from 'next/dist/build/swc'
+import { ASSET } from 'config'
 
 const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
   const [token, setToken] = useState<string | null>(null)
@@ -41,9 +42,14 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
           Connect Bank
         </Button>
       ) : variant === 'ghost' ? (
-        <Button className='plaidlink-ghost'> Connect Bank </Button>
+        <Button onClick={() => open()} variant='ghost' className='plaidlink-ghost'>
+          <p className='hiddenl font-semibold text-black-2 xl:block'> Connect Bank </p>
+        </Button>
       ) : (
-        <Button> Connect Bank </Button>
+        <Button onClick={() => open()} className='plaidlink-default'>
+          <Image src={ASSET.CONNECT_BANK} alt='connect-bank icon' width={24} height={24} />
+          <p className='text-[16px] font-semibold text-black-2'> Connect Bank </p>
+        </Button>
       )}
     </Fragment>
   )
