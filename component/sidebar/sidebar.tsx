@@ -2,7 +2,7 @@
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Footer } from 'component'
+import { Footer, PlaidLink } from 'component'
 import { navLink } from 'config'
 import { cn } from 'lib/utils'
 
@@ -46,7 +46,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
             </Link>
           )
         })}
-        USER
+        <PlaidLink user={user} />
       </nav>
       <Footer user={user} />
     </section>
