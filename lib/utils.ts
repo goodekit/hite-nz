@@ -211,13 +211,3 @@ export const schema = (type: string) =>
     dateOfBirth: type === KEY.SIGN_IN ? z.string().optional() : z.string().min(3),
     ssn: type === KEY.SIGN_IN ? z.string().optional() : z.string().min(3),
   })
-
-// export function formatAmount(amount: number): string {
-//   const formatter = new Intl.NumberFormat('en-US', {
-//     style: 'currency',
-//     currency: 'USD',
-//     minimumFractionDigits: 2,
-//   })
-
-//   return formatter.format(amount)
-// }
