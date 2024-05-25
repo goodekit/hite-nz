@@ -1,4 +1,8 @@
 export { default as AuthForm } from './auth'
 export { default as FormInput } from './form-input'
+export { default as PaymentTransferForm } from './payment-transfer'
+export { default as PaymentTransferInput } from './payment-transfer-input'
 export * from './form'
 export * from './input'
+export * from './dropdown'
+export * from './textarea'
