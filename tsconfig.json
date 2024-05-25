@@ -21,6 +21,6 @@
       "*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/sentry-example-api/route.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/sentry-example-api/route.js", "app/global-error.jsx"],
   "exclude": ["node_modules"]
 }
