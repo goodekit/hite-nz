@@ -1,10 +1,13 @@
 import { ASSET } from 'config'
 import Link from 'next/link'
 import Image from 'next/image'
-import { BankCard } from 'component/bank-card'
+import { Category, BankCard } from 'component'
+import { countTransactionCategories } from 'lib/utils'
 
 const RightSidebar = ({ user, bank, transaction }: RightSidebarProps) => {
   const name = user.firstName + ' ' + user.lastName
+
+  const categories: CategoryCount[] = countTransactionCategories(transaction)
 
   return (
     <aside className='right-sidebar'>
@@ -34,17 +37,26 @@ const RightSidebar = ({ user, bank, transaction }: RightSidebarProps) => {
 
         {bank?.length > 0 && (
           <div className='relative flex flex-1 flex-col items-center justify-center gap-5'>
-            <div className='absolute right-0 top-8 z-0 w-[90%]'>
-              <BankCard key={2} account={bank[1]} username={name} />
+            <div className='relative z-10 w-full'>
+              <BankCard key={bank[0].id} account={bank[0]} username={`${user.firstName} ${user.lastName}`} showBalance={false} />
             </div>
-
             {bank[1] && (
               <div className='absolute right-0 top-8 z-0 w-[90%]'>
-                <BankCard key={0} account={bank[0]} username={name} />
+                <BankCard key={bank[1].id} account={bank[1]} username={`${user.firstName} ${user.lastName}`} showBalance={false} />
               </div>
             )}
           </div>
         )}
+
+        <div className='mt-10 flex flex-1 flex-col gap-6'>
+          <h2 className='header-2'>Top Categories</h2>
+
+          <div className='space-y-5'>
+            {categories.map((c, index) => (
+              <Category key={c.name} category={c} />
+            ))}
+          </div>
+        </div>
       </section>
     </aside>
   )
