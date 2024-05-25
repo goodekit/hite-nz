@@ -1,3 +1,5 @@
+import { ASSET } from 'config'
+
 export const topCategoryStyles = {
   'Food and Drink': {
     bg: 'bg-blue-25',
@@ -10,7 +12,7 @@ export const topCategoryStyles = {
       bg: 'bg-blue-100',
       indicator: 'bg-blue-700',
     },
-    icon: '/icons/monitor.svg',
+    icon: '/asset/svg/monitor.svg',
   },
   Travel: {
     bg: 'bg-success-25',
@@ -23,7 +25,7 @@ export const topCategoryStyles = {
       bg: 'bg-success-100',
       indicator: 'bg-success-700',
     },
-    icon: '/icons/coins.svg',
+    icon: '/asset/svg/coins.svg',
   },
   default: {
     bg: 'bg-pink-25',
@@ -36,6 +38,6 @@ export const topCategoryStyles = {
       bg: 'bg-pink-100',
       indicator: 'bg-pink-700',
     },
-    icon: '/icons/shopping-bag.svg',
+    icon: '/asset/svg/shopping-bag.svg',
   },
 }
