@@ -11,7 +11,7 @@ export const navLink = [
   },
   {
     imgUrl: '/asset/svg/transaction.svg',
-    route: '/transaction',
+    route: '/transaction-history',
     label: 'Transaction History',
   },
   {

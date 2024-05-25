@@ -8,4 +8,10 @@ export const ASSET = {
   SIGN_OUT: '/asset/svg/signout.svg',
   AUTH_IMAGE: '/asset/image/bank.jpg',
   CONNECT_BANK: '/asset/svg/connect-bank.svg',
+  CREDIT_CARD: '/asset/svg/credit-card.svg',
+  ARROW_LEFT: '/asset/svg/arrow-left.svg',
+  ARROW_RIGHT: '/asset/svg/arrow-right.svg',
+  FOOD_DRINK: '/asset/svg/monitor.svg',
+  TRAVEL: '/asset/svg/coins.svg',
+  DEFAULT: '/asset/svg/shopping-bag.svg',
 }
